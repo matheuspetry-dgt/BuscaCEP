@@ -45,13 +45,20 @@ export const CepNumber = () => {
           variant="filled"
           label="Digite o CEP"
           sx={{
-            bgcolor: "#474f97",
+            bgcolor: "primary.main",
             borderRadius: 1,
             width: "100%",
             maxWidth: "300px",
+            '& .MuiInputBase-input': {
+              color: 'primary.contrastText', 
+            },
             '& .MuiFormLabel-root': {
+              color: 'primary.contrastText',
               fontSize: 20
-            }
+            },
+            '& .MuiFormLabel-root.Mui-focused': {
+              color: 'primary.contrastText', 
+            },
           }}
         />
         {address && (
@@ -60,21 +67,22 @@ export const CepNumber = () => {
             sx={{
               p: 2,
               mt: 2,
-              bgcolor: "#474f97",
+              bgcolor: "primary.main",
               width: "100%",
               maxWidth: "300px",
+              color: 'primary.contrastText'
             }}
           >
-            <Typography>
+            <Typography color="inherit">
               <strong>Logradouro:</strong> {address.logradouro}
             </Typography>
-            <Typography>
+            <Typography color="inherit">
               <strong>Bairro:</strong> {address.bairro}
             </Typography>
-            <Typography>
+            <Typography color="inherit">
               <strong>Cidade:</strong> {address.localidade}
             </Typography>
-            <Typography>
+            <Typography color="inherit">
               <strong>Estado:</strong> {address.uf}
             </Typography>
           </Paper>
